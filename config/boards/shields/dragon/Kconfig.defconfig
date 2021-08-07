@@ -1,0 +1,22 @@
+if SHIELD_DRAGON_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Dragon Keyboard Left"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default y
+endif
+
+if SHIELD_DRAGON_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Dragon Keyboard Right"
+
+endif
+
+if SHIELD_DRAGON_LEFT || SHIELD_DRAGON_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif

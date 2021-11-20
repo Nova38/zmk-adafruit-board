@@ -1,0 +1,10 @@
+file_format: "1"
+id: adafruit_macropad
+name: adafruit_macropad
+type: shield
+url: https://github.com/foostan/crkbd/
+requires: [sparkfun_micromod]
+exposes: []
+features:
+  - keys
+siblings:

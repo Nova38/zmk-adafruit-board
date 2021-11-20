@@ -1,0 +1,3 @@
+config ADAFRUIT_MACROPAD
+    def_bool $(shields_list_contains,adafruit_macropad)
+

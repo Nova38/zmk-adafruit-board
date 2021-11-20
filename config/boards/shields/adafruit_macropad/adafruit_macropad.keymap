@@ -1,0 +1,24 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |  ESC    |    1    |    2    |    3    |    4    |    5    |				|    6    |    7    |    8    |    9    |    0    |    -    |
+// |  TAB    |    Q    |    W    |    E    |    R    |    T    |				|    Y    |    U    |    I    |    O    |    P    |    \    |
+// |  SHIFT  |    A    |    S    |    D    |    F    |    G    |				|    H    |    J    |    K    |    L    |    ;    |    '    | Control |    Z    |    X    |    C    |    V    |    B    |				|    N    |    M    |    ,    |    .    |    /    |  R CTRL |
+// | Control |    Z    |    X    |    C    |    V    |    B    |				|    N    |    M    |    ,    |    .    |    /    |  R CTRL |
+            bindings = <
+    &kp ESC    &kp 1    &kp 2    &kp 3     &kp 4     &kp 5				        
+    &kp ESC    &kp Q    &kp W    &kp E     &kp R     &kp T				        
+    &kp TAB    &kp A    &kp S    &kp D     &kp F     &kp G				        
+    &kp LSHIFT &kp Z    &kp X    &kp C     &kp V     &kp B				        
+    &kp LSHIFT &kp Z    &kp X    &kp C     &kp V     &kp B				        
+
+            >;
+        };
+    };
+};

@@ -26,4 +26,28 @@
             , <&micromod 10 (GPIO_ACTIVE_HIGH)>
             ;
                };
+
+
+    &spi0 {
+        compatible = "nordic,nrf-spim";
+        /* Cannot be used together with i2c0. */
+        status = "okay";
+        sck-pin = <28>;
+        mosi-pin = <31>; // MOSI = COPI
+        miso-pin = <2>; // MISO = COPO
+	    cs-gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;
+
+        
+        ls0xx@0 {
+		compatible = "sharp,ls0xx";
+		label = "DISPLAY";
+		spi-max-frequency = <2000000>;
+		reg = <0>;
+		width = <144>;
+		height = <168>;
+		// disp-en-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+	};
+
+    };
+
 };

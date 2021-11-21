@@ -1,7 +1,7 @@
 if ADAFRUIT_MACROPAD
 
 config ZMK_KEYBOARD_NAME
-    default "adafruit macropad"
+    default "ada_macro"
 
 endif
 

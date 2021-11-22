@@ -4,7 +4,9 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
+        
     };
+    
 
     default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
@@ -36,8 +38,23 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,4) RC(4,4) RC(4,5)				RC(4,6) RC(4,7) RC(4,8) RC(4,
             , <&pro_micro_d 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro_a 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro_a 1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-
             ;
 
                };
+
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        label = "LEFT_ENCODER";
+        a-gpios = <&pro_micro_a 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro_a 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        resolution = <4>;
+    };
+  
+    
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+    };
+
 };

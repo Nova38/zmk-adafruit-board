@@ -36,9 +36,9 @@
         compatible = "nordic,nrf-spim";
         /* Cannot be used together with i2c0. */
         status = "okay";
-        sck-pin = <28>;
-        mosi-pin = <31>; // MOSI = COPI
-        miso-pin = <2>; // MISO = COPO
+        sck-pin = <19>;
+        mosi-pin = < 14>; // MOSI = COPI
+        miso-pin = < 21>; // MISO = CIPO
 	    cs-gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;
 
         

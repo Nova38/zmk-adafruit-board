@@ -11,19 +11,19 @@
 
         diode-direction = "row2col";
         col-gpios
-            = <&micromod 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&micromod 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&micromod 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&micromod 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&micromod 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&micromod 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&sparkfun_micromod 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
         row-gpios
-            = <&micromod 6 (GPIO_ACTIVE_HIGH)>
-            , <&micromod 7 (GPIO_ACTIVE_HIGH)>
-            , <&micromod 8 (GPIO_ACTIVE_HIGH)>
-            , <&micromod 9 (GPIO_ACTIVE_HIGH)>
-            , <&micromod 10 (GPIO_ACTIVE_HIGH)>
+            = <&sparkfun_micromod 6 (GPIO_ACTIVE_HIGH)>
+            , <&sparkfun_micromod 7 (GPIO_ACTIVE_HIGH)>
+            , <&sparkfun_micromod 8 (GPIO_ACTIVE_HIGH)>
+            , <&sparkfun_micromod 9 (GPIO_ACTIVE_HIGH)>
+            , <&sparkfun_micromod 10 (GPIO_ACTIVE_HIGH)>
             ;
                };
 
@@ -32,16 +32,7 @@
 
 };
 
-  &spi0 {
-        compatible = "nordic,nrf-spim";
-        /* Cannot be used together with i2c0. */
-        status = "okay";
-        sck-pin = <28>;
-        mosi-pin = <31>; // MOSI = COPI
-        miso-pin = <2>; // MISO = COPO
-	    cs-gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;
-
-        
+  &sparkfun_micromod_spi {
         ls0xx@0 {
 		compatible = "sharp,ls0xx";
 		label = "DISPLAY";
@@ -52,4 +43,4 @@
 		// disp-en-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
 	};
 
-    };
+    };                                                                                                                                                                                                                                                                                                                                                                                                                                                  

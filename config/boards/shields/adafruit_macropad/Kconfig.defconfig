@@ -1,6 +1,3 @@
-if ADAFRUIT_MACROPAD
-
-
 
 CONFIG_ZMK_DISPLAY=y
 CONFIG_LVGL_USE_THEME_MONO=y
@@ -9,24 +6,24 @@ CONFIG_LVGL_CUSTOM_COLOR_TRANSP_RED=0x00
 CONFIG_LVGL_CUSTOM_COLOR_TRANSP_GREEN=0x00
 CONFIG_LVGL_CUSTOM_COLOR_TRANSP_BLUE=0x00
 
-
+if ADAFRUIT_MACROPAD
 
 
 config ZMK_KEYBOARD_NAME
-    default "ada_macro"
+    default "ada_macropad"
 
 
 config ZMK_DISPLAY
 	select LVGL_USE_CONT
 	select LVGL_FONT_MONTSERRAT_26
 
-choice ZMK_DISPLAY_STATUS_SCREEN
-	default ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN
-endchoice
+    # choice ZMK_DISPLAY_STATUS_SCREEN
+    #     default ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN
+    # endchoice
 
 # choice ZMK_DISPLAY_STATUS_SCREEN
-# 	default ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN
-# endchoice
+# 	select ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN
+
 
 # choice ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN
 # endchoice
@@ -76,27 +73,4 @@ endif # ZMK_DISPLAY
 
 
 
-if ZMK_DISPLAY
-
-menuconfig ZAPHOD_BONGO_CAT
-    bool "Show WPM bongo cat"
-    select ZMK_WPM
-    select LVGL_USE_IMG
-    select LVGL_USE_ANIMATION
-
-if ZAPHOD_BONGO_CAT
-
-config ZAPHOD_BONGO_CAT_IDLE_LIMIT
-    int "Upper limit for WPM for showing idle animation"
-    default 30
-
-config ZAPHOD_BONGO_CAT_SLOW_LIMIT
-    int "Upper limit for WPM for showing slow typing image"
-    default 60
-
-endif # ZAPHOD_BONGO_CAT
-
-endif #menueconfig 
-
-endif #ZMK_DISPLAY
-
+endif

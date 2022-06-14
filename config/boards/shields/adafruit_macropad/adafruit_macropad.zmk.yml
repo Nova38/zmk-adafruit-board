@@ -3,7 +3,7 @@ id: adafruit_macropad
 name: adafruit_macropad
 type: shield
 url: https://github.com/foostan/crkbd/
-requires: [sparkfun_micromod]
+requires: [sparkfun_micromod_nrf52840]
 exposes: []
 features:
   - keys

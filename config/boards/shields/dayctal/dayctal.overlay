@@ -1,0 +1,46 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+
+        diode-direction = "row2col";
+        col-gpios
+            = <&sparkfun_micromod 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&sparkfun_micromod 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+        row-gpios
+            = <&sparkfun_micromod 6 (GPIO_ACTIVE_HIGH)>
+            , <&sparkfun_micromod 7 (GPIO_ACTIVE_HIGH)>
+            , <&sparkfun_micromod 8 (GPIO_ACTIVE_HIGH)>
+            , <&sparkfun_micromod 9 (GPIO_ACTIVE_HIGH)>
+            , <&sparkfun_micromod 10 (GPIO_ACTIVE_HIGH)>
+            ;
+               };
+
+
+  
+
+};
+
+//   &sparkfun_micromod_spi {
+//         ls0xx@0 {
+// 		compatible = "sharp,ls0xx";
+// 		label = "DISPLAY";
+// 		spi-max-frequency = <2000000>;
+// 		reg = <0>;
+// 		width = <144>;
+// 		height = <168>;
+// 		// disp-en-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+// 	};
+
+    // };                                                                                                                                                                                                                                                                                                                                                                                                                                                  

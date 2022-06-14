@@ -1,0 +1,10 @@
+file_format: "1"
+id: dayctal
+name: dayctal
+type: shield
+url: https://github.com/foostan/crkbd/
+requires: [sparkfun_micromod_nrf52840]
+exposes: []
+features:
+  - keys
+siblings:

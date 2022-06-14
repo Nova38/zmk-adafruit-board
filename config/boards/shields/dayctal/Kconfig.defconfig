@@ -1,0 +1,6 @@
+if DAYCTAL
+
+
+config ZMK_KEYBOARD_NAME
+    default "dayctal"
+endif

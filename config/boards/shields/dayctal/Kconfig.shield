@@ -1,3 +1,6 @@
-config DAYCTAL
-    def_bool $(shields_list_contains,adafruit_macropad)
 
+config DAYCTAL_LEFT
+    def_bool $(shields_list_contains,dayctal_left)
+
+config DAYCTAL_RIGHT
+    def_bool $(shields_list_contains,dayctal_right)

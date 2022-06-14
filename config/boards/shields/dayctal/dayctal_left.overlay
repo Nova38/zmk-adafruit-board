@@ -1,0 +1,38 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "dayctal.dtsi" // Notice that the main dtsi files are included in the overlay.
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+
+        diode-direction = "row2col";
+        diode-direction = "col2row";
+        row-gpios
+            = <&sparkfun_micromod 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    /* G0 */
+            , <&sparkfun_micromod 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    /* G1 */
+            , <&sparkfun_micromod 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    /* G2 */
+            , <&sparkfun_micromod 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    /* G3 */
+            , <&sparkfun_micromod 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* G4 */
+            , <&sparkfun_micromod 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* G5 */
+            ;
+        col-gpios
+            = <&sparkfun_micromod 15 (GPIO_ACTIVE_HIGH)>    /* A0 */
+            , <&sparkfun_micromod 16 (GPIO_ACTIVE_HIGH)>    /* A1 */
+            , <&sparkfun_micromod 13 (GPIO_ACTIVE_HIGH)>    /* PWM0 */
+            , <&sparkfun_micromod 14 (GPIO_ACTIVE_HIGH)>    /* PWM1 */
+            , <&sparkfun_micromod 11 (GPIO_ACTIVE_HIGH)>    /* D0 */
+            , <&sparkfun_micromod 12 (GPIO_ACTIVE_HIGH)> /* D1 */
+            ;
+               };
+
+
+  
+
+};
+
+                                                                                                                                                                                                                                                                                                                                            
